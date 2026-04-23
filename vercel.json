@@ -5,14 +5,14 @@
     {
       "src": "hos-frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "hos-frontend/dist" }
+      "config": { "distDir": "dist" }
     }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "hos-backend/api/index.py" },
     { "src": "/admin/(.*)", "dest": "hos-backend/api/index.py" },
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/hos-frontend/dist/index.html" }
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
 
