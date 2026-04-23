@@ -38,3 +38,6 @@ pnpm-debug.log*
 .env
 .env.*
 
+# Local personal files
+resume-*.pdf
+
