@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "hos-backend/api/index.py", "use": "@vercel/python" },
+    {
+      "src": "hos-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "hos-frontend/dist" }
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "hos-backend/api/index.py" },
+    { "src": "/admin/(.*)", "dest": "hos-backend/api/index.py" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/hos-frontend/dist/index.html" }
+  ]
+}
+
